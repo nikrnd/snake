@@ -46,7 +46,7 @@ void mappe(int n){
 }
 
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti){
-    srand(time(NULL));
+    srand((int)time(NULL));
     for (int i = 0; i < r; i++) {
         for (int j = 0; j < c; j++)  {
             if(mappa[i][j] != '#' && mappa[i][j] != 'o' && mappa[i][j] != '_'){
