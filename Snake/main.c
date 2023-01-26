@@ -160,28 +160,6 @@ void verifica_cella(int x0, int y0, char dir){
     }
 }
 
-void passo(char dir){
-    
-    switch (dir) {
-        case 'N':
-            
-            break;
-            
-        case 'S':
-            verifica_cella(1, 0, dir);
-            break;
-            
-        case 'E':
-            verifica_cella(0, 1, dir);
-            break;
-            
-        case 'O':
-            verifica_cella(0, -1, dir);
-            break;
-    }
-    
-}
-
 void stampa_mappa(void){
     system("clear");
     for (int i = 0; i < r; i++) {
