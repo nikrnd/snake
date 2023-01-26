@@ -9,17 +9,20 @@
 #include <stdlib.h>
 #include <time.h>
 
-int x, y; //o coords
+//Variabili
+int x, y; //coords
 int c, r; //map dimensions
 int punteggio = 1000, lunghezza = 1, trapani = 0; //game values
 char** mappa; //map
-char* sequenza;
-int conta_passi = 0;
+char* sequenza; //sequenza mossa
+int conta_passi = 0; //numero mosse
 
+//Firme funzioni
 void get_move(void);
 void stampa_mappa(void);
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti);
 
+//Scelta livelli
 void mappe(int n){
     switch (n) {
         case 1:
@@ -47,6 +50,7 @@ void mappe(int n){
     }
 }
 
+//Genera monete, trapani e imprevisti
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti){
     srand((int)time(NULL));
     for (int i = 0; i < r; i++) {
@@ -69,6 +73,7 @@ void genera_elementi(int nMonete, int nTrapani, int nImprevisti){
     }
 }
 
+//Pulisce le celle della matrice
 void flushMap(void){
     for (int i = 0; i < r; i++) {
         free(mappa[i]);
@@ -78,6 +83,7 @@ void flushMap(void){
     mappa = NULL;
 }
 
+//Oggetti sul campo
 void moneta(void){
     punteggio += 10;
     lunghezza++;
@@ -101,11 +107,13 @@ void usa_trapano(void){
     trapani--;
 }
 
+//Vittoria
 void win(void){
     printf("WIN\n");
     exit(0);
 }
 
+//Salva la mossa su un array
 void salva_passo(char dir){
     sequenza = realloc(sequenza, conta_passi * sizeof(char));
     if (sequenza == NULL) {
@@ -115,6 +123,7 @@ void salva_passo(char dir){
     sequenza[conta_passi-1] = dir;
 }
 
+//Verifica se la cella e' libera e si sposta gestendo eventuali oggetti
 void verifica_cella(int x0, int y0, char dir){
     if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
         if (mappa[x+x0][y+y0] == '$') {
@@ -160,6 +169,7 @@ void verifica_cella(int x0, int y0, char dir){
     }
 }
 
+//Stampa la mappa
 void stampa_mappa(void){
     system("clear");
     for (int i = 0; i < r; i++) {
@@ -179,6 +189,7 @@ void stampa_mappa(void){
     }
 }
 
+//Ottiene e gestisce la direzione da tastiera
 void get_move(void){
     conta_passi++;
     char c = getchar();
@@ -221,5 +232,6 @@ int main(int argc, const char * argv[]) {
     //printf("%c", c);
     
     flushMap();
+    free(sequenza);
     return 0;
 }
