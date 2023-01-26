@@ -166,6 +166,14 @@ void verifica_cella(int x0, int y0, char dir){
             y += y0;
             mappa[x][y] = 'o';
         }
+        else if (mappa[x+x0][y+y0] == '#' && trapani > 0) {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            usa_trapano();
+        }
     }
 }
 
