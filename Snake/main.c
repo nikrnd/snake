@@ -13,6 +13,8 @@ int x, y; //o coords
 int c, r; //map dimensions
 int punteggio = 1000, lunghezza = 1, trapani = 0; //game values
 char** mappa; //map
+char* sequenza;
+int conta_passi = 0;
 
 void get_move(void);
 void stampa_mappa(void);
@@ -104,7 +106,16 @@ void win(void){
     exit(0);
 }
 
-void verifica_cella(int x0, int y0){
+void salva_passo(char dir){
+    sequenza = realloc(sequenza, conta_passi * sizeof(char));
+    if (sequenza == NULL) {
+        printf("Spazio insufficiente");
+        exit(0);
+    }
+    sequenza[conta_passi-1] = dir;
+}
+
+void verifica_cella(int x0, int y0, char dir){
     if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
         if (mappa[x+x0][y+y0] == '$') {
             mappa[x][y] = ' ';
@@ -112,6 +123,7 @@ void verifica_cella(int x0, int y0){
             y += y0;
             mappa[x][y] = 'o';
             moneta();
+            salva_passo(dir);
         }
         else if (mappa[x+x0][y+y0] == '_') {
             mappa[x][y] = ' ';
@@ -119,6 +131,7 @@ void verifica_cella(int x0, int y0){
             y += y0;
             mappa[x][y] = 'o';
             win();
+            salva_passo(dir);
         }
         else if (mappa[x+x0][y+y0] == 'T') {
             mappa[x][y] = ' ';
@@ -126,6 +139,7 @@ void verifica_cella(int x0, int y0){
             y += y0;
             mappa[x][y] = 'o';
             trapano();
+            salva_passo(dir);
         }
         else if (mappa[x+x0][y+y0] == '!') {
             mappa[x][y] = ' ';
@@ -133,32 +147,35 @@ void verifica_cella(int x0, int y0){
             y += y0;
             mappa[x][y] = 'o';
             imprevisto();
+            salva_passo(dir);
         }
         else if (mappa[x+x0][y+y0] == ' ') {
             mappa[x][y] = ' ';
             x += x0;
             y += y0;
             mappa[x][y] = 'o';
+            salva_passo(dir);
         }
     }
 }
 
 void passo(char dir){
+    conta_passi++;
     switch (dir) {
         case 'n':
-            verifica_cella(-1, 0);
+            verifica_cella(-1, 0, dir);
             break;
             
         case 's':
-            verifica_cella(1, 0);
+            verifica_cella(1, 0, dir);
             break;
             
         case 'e':
-            verifica_cella(0, 1);
+            verifica_cella(0, 1, dir);
             break;
             
         case 'o':
-            verifica_cella(0, -1);
+            verifica_cella(0, -1, dir);
             break;
     }
     punteggio--;
@@ -171,6 +188,12 @@ void stampa_mappa(void){
     for (int i = 0; i < r; i++) {
         for (int j = 0; j < c; j++) {
             printf("%c", mappa[i][j]);
+        }
+        if (i == r-4) {
+            printf("    Sequenza: ");
+            for (int i = 0; i < conta_passi; i++) {
+                printf("%c", sequenza[i]);
+            }
         }
         if (i == r-3) printf("    Trapani: %d", trapani);
         if (i == r-2) printf("    Lunghezza: %d", lunghezza);
@@ -209,6 +232,7 @@ void get_move(void){
 }
 
 int main(int argc, const char * argv[]) {
+    sequenza = malloc(sizeof(char));
     mappe(1);
     stampa_mappa();
     
