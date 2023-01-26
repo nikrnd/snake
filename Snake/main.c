@@ -2,8 +2,6 @@
 //  main.c
 //  Snake
 //
-//  Created by Nicolas Delton on 24/01/23.
-//
 
 #include <stdio.h>
 #include <stdlib.h>
