@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <curses.h>
 
 //Variabili
 int x, y; //coords
@@ -43,6 +44,34 @@ void mappe(int n){
             y = 0;
             mappa[7][c-1] = '_';
             genera_elementi(7, 2, 2);
+            break;
+        
+        case 2:
+            c = 20;
+            r = 10;
+            mappa = malloc(sizeof(char*) * r);
+            for (int i = 0; i < r; i++) {
+                mappa[i] = malloc(sizeof(char) * c);
+            }
+            for (int i = 0; i < r; i++) {
+                for (int j = 0; j < c; j++) {
+                    if (i == 0 || j == 0 || i == r-1 || j == c-1) mappa[i][j] = '#';
+                    else mappa[i][j] = ' ';
+                }
+            }
+            mappa[3][0] = 'o';
+            x = 3;
+            y = 0;
+            mappa[2][c-1] = '_';
+            
+            for (int i = 1; i < 6; i++) {
+                mappa[i][4] = '#';
+            }
+            for (int i = 1; i < 11; i++) {
+                mappa[4][c-i] = '#';
+            }
+            
+            genera_elementi(7, 3, 2);
             break;
             
         default:
@@ -232,8 +261,15 @@ void get_move(void){
 }
 
 int main(int argc, const char * argv[]) {
+    int level;
+    do {
+        printf("Scegli livello da 1 a 2: ");
+        scanf("%d", &level);
+    } while (level < 1 || level > 2);
+    
+    getchar();
     sequenza = malloc(sizeof(char));
-    mappe(1);
+    mappe(level);
     stampa_mappa();
     
     get_move();
