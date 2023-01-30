@@ -1,27 +1,43 @@
-//
-//  main.c
-//  Snake
-//
+/**
+ @file
+ @brief File principale
+ @author Delton Nicolas <896295@stud.unive.it>
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-
-//Variabili
-int x, y; //coords
-int c, r; //map dimensions
-int punteggio = 1000, lunghezza = 1, trapani = 0; //game values
-char** mappa; //map
-char* sequenza; //sequenza mossa
-int conta_passi = 0; //numero mosse
+/**Coordinata x della testa**/
+int x;
+/**Coordinata y della testa**/
+int y;
+/**Dimensione della mappa (colonne)**/
+int c;
+/**Dimensione della mappa (righe)**/
+int r;
+/**Punteggio totale**/
+int punteggio = 1000;
+/**Lunghezza dello snake**/
+int lunghezza = 1;
+/**Numero di trapani**/
+int trapani = 0;
+/**Array dinamico contenente la mappa**/
+char** mappa;
+/**Array dinamico contenente la sequenza di mosse effettuate**/
+char* sequenza;
+/**Numero di passi effettuati**/
+int conta_passi = 0;
 
 //Firme funzioni
 void get_move(void);
 void stampa_mappa(void);
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti);
 
-//Scelta livelli
+/**
+ @brief Funzione che genera la mappa desiderata
+ @param n Inserire codice della mappa da selezionare
+ */
 void mappe(int n){
     switch (n) {
         case 1:
@@ -77,7 +93,12 @@ void mappe(int n){
     }
 }
 
-//Genera monete, trapani e imprevisti
+/**
+ @brief Funzione che genera monete, trapani e imprevisti
+ @param nMonete Inserire il numero di monete desiderate
+ @param nTrapani Inserire il numero di trapani desiderate
+ @param nImprevisti Inserire il numero di imprevisti desiderate
+ */
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti){
     srand((int)time(NULL));
     for (int i = 0; i < r; i++) {
@@ -100,7 +121,9 @@ void genera_elementi(int nMonete, int nTrapani, int nImprevisti){
     }
 }
 
-//Pulisce le celle della matrice
+/**
+ @brief Funzione che libera la memoria
+ */
 void flushMap(void){
     for (int i = 0; i < r; i++) {
         free(mappa[i]);
@@ -110,12 +133,17 @@ void flushMap(void){
     mappa = NULL;
 }
 
-//Oggetti sul campo
+/**
+ @brief Funzione eseguita quanto la testa trova una moneta
+ */
 void moneta(void){
     punteggio += 10;
     lunghezza++;
 }
 
+/**
+ @brief Funzione eseguita quanto la testa trova un imprevisto
+ */
 void imprevisto(void){
     punteggio /= 2;
     lunghezza /= 2;
@@ -126,21 +154,32 @@ void imprevisto(void){
     }
 }
 
+/**
+ @brief Funzione eseguita quanto la testa trova un trapano
+ */
 void trapano(void) {
     trapani += 3;
 }
 
+/**
+ @brief Funzione eseguita quanto la testa vuole usare un trapano
+ */
 void usa_trapano(void){
     trapani--;
 }
 
-//Vittoria
+/**
+ @brief Funzione eseguita quanto la testa trova l'uscita
+ */
 void win(void){
     printf("WIN\n");
     exit(0);
 }
 
-//Salva la mossa su un array
+/**
+ @brief Funzione che salva il passo effettuato
+ @param dir Direzione del passo effetuato
+ */
 void salva_passo(char dir){
     sequenza = realloc(sequenza, conta_passi * sizeof(char));
     if (sequenza == NULL) {
@@ -150,7 +189,12 @@ void salva_passo(char dir){
     sequenza[conta_passi-1] = dir;
 }
 
-//Verifica se la cella e' libera e si sposta gestendo eventuali oggetti
+/**
+ @brief Funzione che verifica se è possibile effettuare la mossa desiderata e in caso positivo la fa
+ @param x0 Valore di dove la testa deve spostarsi verticalmente
+ @param y0 Valore di dove la testa deve spostarsi orizzontalmente
+ @param dir Valore della direzione utilizzato per salvare le mosse effettuate
+ */
 void verifica_cella(int x0, int y0, char dir){
     if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
         if (mappa[x+x0][y+y0] == '$') {
@@ -160,6 +204,7 @@ void verifica_cella(int x0, int y0, char dir){
             y += y0;
             mappa[x][y] = 'o';
             moneta();
+            
         }
         else if (mappa[x+x0][y+y0] == '_') {
             salva_passo(dir);
@@ -204,7 +249,9 @@ void verifica_cella(int x0, int y0, char dir){
     }
 }
 
-//Stampa la mappa
+/**
+ @brief Funzione che stampa la mappa aggiornata
+ */
 void stampa_mappa(void){
     system("clear");
     for (int i = 0; i < r; i++) {
@@ -224,7 +271,9 @@ void stampa_mappa(void){
     }
 }
 
-//Ottiene e gestisce la direzione da tastiera
+/**
+ @brief Funzione che legge la mossa da tastiera e gestisce le direzioni
+ */
 void get_move(void){
     conta_passi++;
     char c = getchar();
@@ -259,14 +308,14 @@ void get_move(void){
 }
 
 int main(int argc, const char * argv[]) {
+    sequenza = malloc(sizeof(char));
     int level;
     do {
         printf("Scegli livello da 1 a 2: ");
         scanf("%d", &level);
     } while (level < 1 || level > 2);
-    
     getchar();
-    sequenza = malloc(sizeof(char));
+    
     mappe(level);
     stampa_mappa();
     
