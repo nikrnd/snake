@@ -1,0 +1,26 @@
+var main_8c =
+[
+    [ "flushMap", "main_8c.html#ac48368db1d8936a15500c02153d2fefa", null ],
+    [ "genera_elementi", "main_8c.html#a6b9c495032b805d4fc4a269d97afbcb9", null ],
+    [ "get_move", "main_8c.html#aa85dec691519cc95af98960f94427a43", null ],
+    [ "imprevisto", "main_8c.html#a43ded42ef154113cee678ad450dc8d6c", null ],
+    [ "main", "main_8c.html#ac0f2228420376f4db7e1274f2b41667c", null ],
+    [ "mappe", "main_8c.html#a826a4687f5d130d7df17a276c37bacb6", null ],
+    [ "moneta", "main_8c.html#abac8ff8ab53b73d163ff7d9aa4b794d9", null ],
+    [ "salva_passo", "main_8c.html#a5673a0da654a7b9e17876ac9ee518e1e", null ],
+    [ "stampa_mappa", "main_8c.html#a8a54f1a452532f4c0420c8b2b4bcfa23", null ],
+    [ "trapano", "main_8c.html#a8a17eaf7b0ad34c2fc9a949267b55c33", null ],
+    [ "usa_trapano", "main_8c.html#ada1ea3f55a417f16eaf4f2326d32c5d8", null ],
+    [ "verifica_cella", "main_8c.html#a837bfed1a0316eb3a669ac50e245e2ba", null ],
+    [ "win", "main_8c.html#affc27cfe814c9310b472cc0ed125c6d7", null ],
+    [ "c", "main_8c.html#a4e1e0e72dd773439e333c84dd762a9c3", null ],
+    [ "conta_passi", "main_8c.html#a22fe1178cb32536d40375b612ef208b4", null ],
+    [ "lunghezza", "main_8c.html#a8827e73f540ce91e2fab5d1a7e4772f1", null ],
+    [ "mappa", "main_8c.html#a483f02126e42c02d07c9d3e182e6c1c4", null ],
+    [ "punteggio", "main_8c.html#a3ae710065269244fe448465525fd9c4d", null ],
+    [ "r", "main_8c.html#acab531abaa74a7e664e3986f2522b33a", null ],
+    [ "sequenza", "main_8c.html#af3696e4fbbe2016b68cba2fca3fa84f0", null ],
+    [ "trapani", "main_8c.html#a627f5fa9abe658322c368f91a2e4c9da", null ],
+    [ "x", "main_8c.html#a6150e0515f7202e2fb518f7206ed97dc", null ],
+    [ "y", "main_8c.html#a0a2f84ed7838f07779ae24c5a9086d33", null ]
+];

@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D1130A40298B1262004907A7 /* getch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getch.h; sourceTree = "<group>"; };
 		D169D767298070950006FF37 /* Snake */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Snake; sourceTree = BUILT_PRODUCTS_DIR; };
 		D169D76A298070950006FF37 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; lineEnding = 0; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +42,7 @@
 		D169D75E298070950006FF37 = {
 			isa = PBXGroup;
 			children = (
+				D1130A40298B1262004907A7 /* getch.h */,
 				D169D769298070950006FF37 /* Snake */,
 				D169D768298070950006FF37 /* Products */,
 			);
