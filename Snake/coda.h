@@ -51,3 +51,47 @@ void aggiorna_coda(void){
         }
     }
 }
+
+int verifica_morso(){
+    int tx = x, ty = y;
+    int conta_coda = 0;
+
+    if ((sequenza[conta_passi] == 'N' && sequenza[conta_passi-1] == 'S') ||
+        (sequenza[conta_passi] == 'S' && sequenza[conta_passi-1] == 'N') ||
+        (sequenza[conta_passi] == 'E' && sequenza[conta_passi-1] == 'O') ||
+        (sequenza[conta_passi] == 'O' && sequenza[conta_passi-1] == 'E'))
+    {
+        return 2;
+    }
+    
+
+    for (int i = conta_passi; (i > conta_passi - lunghezza); i--)
+    {
+        //printf("%c", sequenza[i]);
+        switch (sequenza[i]) {
+            case 'N':
+                tx += 1;
+                break;
+            
+            case 'S':
+                tx -= 1;
+                if (mappa[tx][ty] == '.') conta_coda++;
+                break;
+
+            case 'E':
+                ty -= 1;
+                if (mappa[tx][ty] == '.') conta_coda++;
+                break;
+
+            case 'O':
+                ty += 1;
+                if (mappa[tx][ty] == '.') conta_coda++;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    return conta_coda;
+}

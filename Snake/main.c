@@ -128,6 +128,15 @@ void verifica_cella(int x0, int y0, char dir){
             usa_trapano();
             aggiorna_coda();
         }
+        else if (mappa[x+x0][y+y0] == '.') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            lunghezza = verifica_morso();
+            aggiorna_coda();
+        }
         else {
             printf("ciao");
         }
@@ -192,6 +201,7 @@ void get_move(void){
 }
 
 int main(int argc, const char * argv[]) {
+    system("clear");
     sequenza = malloc(sizeof(char));
     coda_seq = malloc(sizeof(char));
     int level;
