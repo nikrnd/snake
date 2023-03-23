@@ -10,7 +10,6 @@
 #include "coda.h"
 #include "basicFun.h"
 #include "mappe.h"
-#include "ai.h"
 #include "read_map_from_file.h"
 
 #if !defined _WIN32
@@ -78,13 +77,6 @@ int main(int argc, const char * argv[]) {
     system("clear");
     sequenza = malloc(sizeof(char));
 
-    int mode;
-    do {
-        printf("Vuoi giocare da solo o trovare il percorso migliore in automatico?\n[1] da solo\n[2] in automatico\n");
-        scanf("%d", &mode);
-    } while (mode < 1 || mode > 2);
-    getchar();
-
     int level;
     do {
         printf("Scegli livello da 1 a 4: ");
@@ -96,14 +88,7 @@ int main(int argc, const char * argv[]) {
 
     stampa_mappa();
 
-    if(mode == 1){
-        //DA SOLO     
-        get_move();
-        
-    } else {
-        //IN AUTOMATICO
-        auto_solve();
-    }
+    get_move();
 
     flushMap();
     free(sequenza);
