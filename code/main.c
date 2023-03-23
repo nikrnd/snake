@@ -137,9 +137,6 @@ void verifica_cella(int x0, int y0, char dir){
             lunghezza = verifica_morso();
             aggiorna_coda();
         }
-        else {
-            printf("ciao");
-        }
     }
 }
 
