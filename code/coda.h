@@ -1,11 +1,16 @@
 extern char** mappa; //mappa
 extern int lunghezza; //lunghezza coda
+
+/**Numero di passi effettuati**/
 extern int conta_passi;
 extern int x; //testa
 extern int y; //testa
+
+/**Array dinamico contenente la sequenza di mosse effettuate**/
 extern char* sequenza;
 extern int c;
 extern int r;
+
 
 void aggiorna_coda(void){
     int tx = x, ty = y;

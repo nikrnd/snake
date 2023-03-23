@@ -33,12 +33,6 @@ int _getch(void){
 
 /**Array dinamico contenente la mappa**/
 char** mappa;
-/**Array dinamico contenente la sequenza di mosse effettuate**/
-/**Numero di passi effettuati**/
-
-
-//Firme funzioni
-void get_move(void);
 
 /**
  @brief Funzione che legge la mossa da tastiera e gestisce le direzioni

@@ -1,5 +1,4 @@
 extern char** mappa;
-extern int r;
 
 /**Punteggio totale**/
 int punteggio = 1000;
