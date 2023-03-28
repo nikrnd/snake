@@ -1,4 +1,8 @@
 .DS_store
 .vscode
 Delton_Nicolas.zip
-a.out
+code/main.dSYM/Contents/Resources/DWARF/main
+*.plist
+code/main.dSYM/Contents/Resources/DWARF/main
+*.out
+*.json
