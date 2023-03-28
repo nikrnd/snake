@@ -1,4 +1,9 @@
 .DS_store
 .vscode
 Delton_Nicolas.zip
-a.out
+*.dSYM
+*.plist
+*.out
+*.json
+mapInput.txt
+code/main
