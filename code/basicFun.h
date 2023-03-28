@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 extern char** mappa;
 
 /**Punteggio totale**/
@@ -116,7 +118,7 @@ void salva_passo(char dir){
  @param y0 Valore di dove la testa deve spostarsi orizzontalmente
  @param dir Valore della direzione utilizzato per salvare le mosse effettuate
  */
-void verifica_cella(int x0, int y0, char dir){
+bool verifica_cella(int x0, int y0, char dir){
     if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
         if (mappa[x+x0][y+y0] == '$') {
             salva_passo(dir);
@@ -126,7 +128,7 @@ void verifica_cella(int x0, int y0, char dir){
             mappa[x][y] = 'o';
             moneta();
             aggiorna_coda();
-            
+            return true;
         }
         else if (mappa[x+x0][y+y0] == '_') {
             salva_passo(dir);
@@ -137,6 +139,7 @@ void verifica_cella(int x0, int y0, char dir){
             aggiorna_coda();
             stampa_mappa();
             win();
+            return true;
         }
         else if (mappa[x+x0][y+y0] == 'T') {
             salva_passo(dir);
@@ -146,6 +149,7 @@ void verifica_cella(int x0, int y0, char dir){
             mappa[x][y] = 'o';
             trapano();
             aggiorna_coda();
+            return true;
         }
         else if (mappa[x+x0][y+y0] == '!') {
             salva_passo(dir);
@@ -155,6 +159,7 @@ void verifica_cella(int x0, int y0, char dir){
             mappa[x][y] = 'o';
             imprevisto();
             aggiorna_coda();
+            return true;
         }
         else if (mappa[x+x0][y+y0] == ' ') {
             salva_passo(dir);
@@ -163,6 +168,7 @@ void verifica_cella(int x0, int y0, char dir){
             y += y0;
             mappa[x][y] = 'o';
             aggiorna_coda();
+            return true;
         }
         else if (mappa[x+x0][y+y0] == '#' && trapani > 0) {
             salva_passo(dir);
@@ -172,6 +178,7 @@ void verifica_cella(int x0, int y0, char dir){
             mappa[x][y] = 'o';
             usa_trapano();
             aggiorna_coda();
+            return true;
         }
         else if (mappa[x+x0][y+y0] == '.') {
             salva_passo(dir);
@@ -181,6 +188,8 @@ void verifica_cella(int x0, int y0, char dir){
             mappa[x][y] = 'o';
             lunghezza = verifica_morso();
             aggiorna_coda();
+            return true;
         }
     }
+    return false;
 }
