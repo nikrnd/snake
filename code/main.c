@@ -78,14 +78,17 @@ int main(int argc, const char * argv[]) {
 
     int mode;
     do {
-        printf("Vuoi giocare da solo o trovare il percorso migliore in automatico?\n[1] da solo\n[2] in automatico\n[3] da file in manuale\n");
+        printf("Vuoi giocare da solo o trovare il percorso migliore in automatico?\n[1] da solo\n[2] in automatico\n[3] da file in manuale\n[4] da file in automatico\n");
         scanf("%d", &mode);
-    } while (mode < 1 || mode > 3);
+    } while (mode < 1 || mode > 4);
     getchar();
 
     if (mode == 3) {
         readFromFile();
         get_move();
+    } else if(mode == 4){
+        readFromFile();
+        auto_solve();
     }
     
     int level;

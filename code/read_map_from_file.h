@@ -71,7 +71,6 @@ void readFromFile(void){
     }
 
     stampa_mappa();
-    get_move();
     
     fclose(ptr);
 }
