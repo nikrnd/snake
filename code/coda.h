@@ -61,12 +61,12 @@ int verifica_morso(){
     int tx = x, ty = y;
     int conta_coda = 0;
 
-    if ((sequenza[conta_passi] == 'N' && sequenza[conta_passi-1] == 'S') ||
-        (sequenza[conta_passi] == 'S' && sequenza[conta_passi-1] == 'N') ||
-        (sequenza[conta_passi] == 'E' && sequenza[conta_passi-1] == 'O') ||
-        (sequenza[conta_passi] == 'O' && sequenza[conta_passi-1] == 'E'))
+    if ((sequenza[conta_passi-1] == 'N' && sequenza[conta_passi-2] == 'S') ||
+        (sequenza[conta_passi-1] == 'S' && sequenza[conta_passi-2] == 'N') ||
+        (sequenza[conta_passi-1] == 'E' && sequenza[conta_passi-2] == 'O') ||
+        (sequenza[conta_passi-1] == 'O' && sequenza[conta_passi-2] == 'E'))
     {
-        return 2;
+        return 1;
     }
     
 
@@ -80,23 +80,23 @@ int verifica_morso(){
             
             case 'S':
                 tx -= 1;
-                if (mappa[tx][ty] == '.') conta_coda++;
                 break;
 
             case 'E':
                 ty -= 1;
-                if (mappa[tx][ty] == '.') conta_coda++;
                 break;
 
             case 'O':
                 ty += 1;
-                if (mappa[tx][ty] == '.') conta_coda++;
                 break;
 
             default:
                 break;
         }
+        if (mappa[tx][ty] == '.') conta_coda++;
     }
+
+    if (!conta_coda) conta_coda++;
 
     return conta_coda;
 }

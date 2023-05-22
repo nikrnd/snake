@@ -25,48 +25,15 @@ void first_move(void){
     }
 }
 
-void mid_moves(void){
-
-    /* NOL VA
-    if (sequenza[conta_passi-1] == 'N')
-        if (!verifica_cella(-1, 0, 'N'))
-        if (!verifica_cella(0, 1, 'E'))
-        if (!verifica_cella(0, -1, 'O'))
-            ;
-
-    if (sequenza[conta_passi-1] == 'S')
-        if (!verifica_cella(1, 0, 'S'))
-        if (!verifica_cella(0, 1, 'E'))
-        if (!verifica_cella(0, -1, 'O'))
-            ;
-
-    if (sequenza[conta_passi-1] == 'E')
-        if (!verifica_cella(0, 1, 'E'))
-        if (!verifica_cella(-1, 0, 'N'))
-        if (!verifica_cella(1, 0, 'S'))
-            ;
-
-    if (sequenza[conta_passi-1] == 'O')
-        if (!verifica_cella(0, -1, 'O'))
-        if (!verifica_cella(-1, 0, 'N'))
-        if (!verifica_cella(1, 0, 'S'))
-            ;
-    */
-
-    /* QUESTO ANCORA MANCO :-)
-    if (sequenza[conta_passi-1] != 'N' && !verifica_cella(1, 0, 'S')) 
-            if (sequenza[conta_passi-1] != 'O' && !verifica_cella(0, 1, 'E'))
-                if (sequenza[conta_passi-1] != 'S' && !verifica_cella(-1, 0, 'N'))
-                    if (sequenza[conta_passi-1] != 'E' && !verifica_cella(0, -1, 'O'))
-                        ;
-    */
-}
-
 void last_move(void){
     if (mappa[x+1][y] == '_') verifica_cella(-1, 0, 'N');
     else if (mappa[x-1][y]== '_') verifica_cella(1, 0, 'S');
     else if (mappa[x][y+1] == '_') verifica_cella(0, 1, 'E');
     else if (mappa[x][y-1] == '_') verifica_cella(0, -1, 'O');
+}
+
+void mid_moves() {
+    
 }
 
 void auto_solve(void){
@@ -85,7 +52,6 @@ void auto_solve(void){
 
         usleep(DELAY);
 
-        last_move();
     }
     
 }

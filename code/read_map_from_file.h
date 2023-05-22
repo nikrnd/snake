@@ -31,23 +31,45 @@ void getNumColsAndRows(void){
     r = righe;
 }
 
-void getHeadPosition(void){
-
-}
 void readFromFile(void){
 
     FILE* ptr;
     ptr = fopen("mapInput.txt", "r");
  
+    int err_counter = 0;
     if (ptr == NULL) {
+        err_counter = 0;
         fclose(ptr);
         FILE* new = fopen("mapInput.txt", "w");
         fclose(new);
-
-        printf("File appena creato, inserisci la mappa e premi qualunque tasto");
-        _getch();
-
+        FILE* ptr = fopen("mapInput.txt", "r");
+        fseek (ptr, 0, SEEK_END);
+        fclose(ptr);
+        while (0 == ftell(ptr)) {
+            err_counter++;
+            system("clear");
+            printf("Errore numero %d: File appena creato, inserisci la mappa e premi qualunque tasto\n", err_counter);
+            _getch();
+            FILE* ptr = fopen("mapInput.txt", "r");
+            fseek (ptr, 0, SEEK_END);
+            fclose(ptr);
+        }
+        
         readFromFile();
+    } else if (ptr != NULL) {
+        err_counter = 0;
+        FILE* ptr = fopen("mapInput.txt", "r");
+        fseek (ptr, 0, SEEK_END);
+        fclose(ptr);
+        while (0 == ftell(ptr)) {
+            err_counter++;
+            system("clear");
+            printf("Errore numero %d: File appena creato, inserisci la mappa e premi qualunque tasto\n", err_counter);
+            _getch();
+            FILE* ptr = fopen("mapInput.txt", "r");
+            fseek (ptr, 0, SEEK_END);
+            fclose(ptr);
+        }
     }
 
     getNumColsAndRows();
