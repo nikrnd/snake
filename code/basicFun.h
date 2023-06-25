@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
 extern char** mappa;
-
+extern int n_map;
 /**Punteggio totale**/
 int punteggio = 1000;
 /**Lunghezza dello snake**/
@@ -31,6 +31,21 @@ void flushMap(void){
     mappa = NULL;
 }
 
+void restart(void){
+    mappe(n_map);
+    remove(sequenza);
+    sequenza = malloc(sizeof(char)); 
+    trapani = 0;
+    punteggio = 1000;
+    lunghezza = 1;
+    conta_passi = 0;
+}
+
+void end(void){
+    printf("TRY AGAIN\n");
+    exit(0);
+}
+
 /**
  @brief Funzione eseguita quanto la testa trova una moneta
  */
@@ -46,9 +61,15 @@ void imprevisto(void){
     punteggio /= 2;
     lunghezza /= 2;
     
+    if (lunghezza == 0) end();
+}
+
+void imprevisto_a(void){
+    punteggio /= 2;
+    lunghezza /= 2;
+    
     if (lunghezza == 0) {
-        printf("TRY AGAIN\n");
-        exit(0);
+        restart();
     }
 }
 
@@ -70,6 +91,11 @@ void usa_trapano(void){
  @brief Funzione eseguita quanto la testa trova l'uscita
  */
 void win(void){
+    printf("WIN\n");
+    exit(0);
+}
+
+void win_a(void){
     printf("WIN\n");
     exit(0);
 }
@@ -119,6 +145,7 @@ void salva_passo(char dir){
  @param dir Valore della direzione utilizzato per salvare le mosse effettuate
  */
 bool verifica_cella(int x0, int y0, char dir){
+    if (punteggio <= 0) restart();
     if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
         if (mappa[x+x0][y+y0] == '$') {
             salva_passo(dir);
@@ -190,6 +217,85 @@ bool verifica_cella(int x0, int y0, char dir){
             aggiorna_coda();
             return true;
         }
+    }
+    return false;
+}
+
+bool verifica_cella_a(int x0, int y0, char dir){
+    if (punteggio <= 0) restart();
+    if (x+x0 >= 0 && x+x0 < r && y+y0 >= 0 && y+y0 < c){
+        if (mappa[x+x0][y+y0] == '$') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            moneta();
+            aggiorna_coda();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == '_') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            aggiorna_coda();
+            win_a();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == 'T') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            trapano();
+            aggiorna_coda();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == '!') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            imprevisto_a();
+            aggiorna_coda();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == ' ') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            aggiorna_coda();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == '#' && trapani > 0) {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            usa_trapano();
+            aggiorna_coda();
+            return true;
+        }
+        else if (mappa[x+x0][y+y0] == '.') {
+            salva_passo(dir);
+            mappa[x][y] = ' ';
+            x += x0;
+            y += y0;
+            mappa[x][y] = 'o';
+            lunghezza = verifica_morso();
+            aggiorna_coda();
+            return true;
+        } //else restart();
+    }
+    else {
+        restart();
     }
     return false;
 }

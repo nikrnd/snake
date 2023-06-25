@@ -27,8 +27,8 @@ int _getch(void){
 #endif
 
 #include "coda.h"
-#include "basicFun.h"
 #include "mappe.h"
+#include "basicFun.h"
 #include "ai.h"
 
 void get_move(void);
@@ -80,6 +80,7 @@ int main(int argc, const char * argv[]) {
     do {
         printf("Vuoi giocare da solo o trovare il percorso migliore in automatico?\n[1] da solo\n[2] in automatico\n[3] da file in manuale\n[4] da file in automatico\n");
         scanf("%d", &mode);
+        //mode = 2;
     } while (mode < 1 || mode > 4);
     getchar();
 
@@ -95,6 +96,7 @@ int main(int argc, const char * argv[]) {
     do {
         printf("Scegli livello da 1 a 4: ");
         scanf("%d", &level);
+        //level = 1;
     } while (level < 1 || level > 4);
     getchar();
 
@@ -104,7 +106,8 @@ int main(int argc, const char * argv[]) {
 
     switch (mode)
     {
-        case 1: get_move();
+        case 1:
+            get_move();
             break;
 
         case 2:

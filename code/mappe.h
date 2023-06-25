@@ -5,11 +5,13 @@ extern int c, r, x, y;
 
 void genera_elementi(int nMonete, int nTrapani, int nImprevisti);
 
+int n_map;
 /**
  @brief Funzione che genera la mappa desiderata
  @param n Inserire codice della mappa da selezionare
  */
 void mappe(int n){
+    n_map = n;
     switch (n) {
         case 1:
             c = 20;

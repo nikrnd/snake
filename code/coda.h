@@ -16,6 +16,7 @@ char last(void){
 }
 
 void aggiorna_coda(void){
+    if (lunghezza == 1) return;
     int tx = x, ty = y;
     for (int i = 0; i < r; i++)
     {
@@ -30,7 +31,7 @@ void aggiorna_coda(void){
         
     }
     
-    for (int i = conta_passi; i > conta_passi - lunghezza; i--)
+    for (int i = lunghezza; i > 0; i--)
     {
         //printf("%c", sequenza[i]);
         switch (sequenza[i]) {
