@@ -1,0 +1,204 @@
+\doxysection{code/basic\+Fun.h File Reference}
+\hypertarget{basic_fun_8h}{}\label{basic_fun_8h}\index{code/basicFun.h@{code/basicFun.h}}
+
+
+File che contiene funzioni utilizzate spesso.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{basic_fun_8h_ac48368db1d8936a15500c02153d2fefa}\label{basic_fun_8h_ac48368db1d8936a15500c02153d2fefa} 
+void {\bfseries flush\+Map} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che libera la memoria. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a719efb2d80621f110bc948c3b4dcc5d7}\label{basic_fun_8h_a719efb2d80621f110bc948c3b4dcc5d7} 
+void {\bfseries restart} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita in modalità automatica quanto la testa trova un vicolo ceco o non riesce a risolvere il labirinto. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a081b5c662ecee58405a543518f699d31}\label{basic_fun_8h_a081b5c662ecee58405a543518f699d31} 
+void {\bfseries end} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto si ha perso. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_abac8ff8ab53b73d163ff7d9aa4b794d9}\label{basic_fun_8h_abac8ff8ab53b73d163ff7d9aa4b794d9} 
+void {\bfseries moneta} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova una moneta. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a43ded42ef154113cee678ad450dc8d6c}\label{basic_fun_8h_a43ded42ef154113cee678ad450dc8d6c} 
+void {\bfseries imprevisto} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova un imprevisto. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a346840ca367b35b0e194d4626623f228}\label{basic_fun_8h_a346840ca367b35b0e194d4626623f228} 
+void {\bfseries imprevisto\+\_\+a} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova un imprevisto in modalità automatica. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a8a17eaf7b0ad34c2fc9a949267b55c33}\label{basic_fun_8h_a8a17eaf7b0ad34c2fc9a949267b55c33} 
+void {\bfseries trapano} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova un trapano. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_ada1ea3f55a417f16eaf4f2326d32c5d8}\label{basic_fun_8h_ada1ea3f55a417f16eaf4f2326d32c5d8} 
+void {\bfseries usa\+\_\+trapano} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa vuole usare un trapano. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_affc27cfe814c9310b472cc0ed125c6d7}\label{basic_fun_8h_affc27cfe814c9310b472cc0ed125c6d7} 
+void {\bfseries win} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova l\textquotesingle{}uscita. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_af3c30c28aaf0111cedeedf7bd3aeb24d}\label{basic_fun_8h_af3c30c28aaf0111cedeedf7bd3aeb24d} 
+void {\bfseries win\+\_\+a} (void)
+\begin{DoxyCompactList}\small\item\em Funzione eseguita quanto la testa trova l\textquotesingle{}uscita in modalità automatica. \end{DoxyCompactList}\item 
+\Hypertarget{basic_fun_8h_a8a54f1a452532f4c0420c8b2b4bcfa23}\label{basic_fun_8h_a8a54f1a452532f4c0420c8b2b4bcfa23} 
+void {\bfseries stampa\+\_\+mappa} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che stampa la mappa aggiornata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{basic_fun_8h_a5673a0da654a7b9e17876ac9ee518e1e}{salva\+\_\+passo}} (char dir)
+\begin{DoxyCompactList}\small\item\em Funzione che salva il passo effettuato. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{basic_fun_8h_a41982125de145e96a02064efbead144c}{verifica\+\_\+cella}} (int x0, int y0, char dir)
+\begin{DoxyCompactList}\small\item\em Funzione che verifica se è possibile effettuare la mossa desiderata e in caso positivo la fa. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{basic_fun_8h_a29857d3a1052401cc1f2c7c80eed365f}{verifica\+\_\+cella\+\_\+a}} (int x0, int y0, char dir)
+\begin{DoxyCompactList}\small\item\em Funzione che verifica se è possibile effettuare la mossa desiderata e in caso positivo la fa, modalità automatica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{basic_fun_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}
+\item 
+\Hypertarget{basic_fun_8h_a41069955315a21bdad9aeada75d27bb7}\label{basic_fun_8h_a41069955315a21bdad9aeada75d27bb7} 
+int {\bfseries n\+\_\+map}
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a3ae710065269244fe448465525fd9c4d}{punteggio}} = 1000
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a8827e73f540ce91e2fab5d1a7e4772f1}{lunghezza}} = 1
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a627f5fa9abe658322c368f91a2e4c9da}{trapani}} = 0
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a22fe1178cb32536d40375b612ef208b4}{conta\+\_\+passi}} = 0
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{basic_fun_8h_af3696e4fbbe2016b68cba2fca3fa84f0}{sequenza}}
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}}
+\item 
+int \mbox{\hyperlink{basic_fun_8h_acab531abaa74a7e664e3986f2522b33a}{r}}
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}
+\item 
+int \mbox{\hyperlink{basic_fun_8h_a0a2f84ed7838f07779ae24c5a9086d33}{y}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File che contiene funzioni utilizzate spesso. 
+
+\begin{DoxyAuthor}{Author}
+Delton Nicolas \href{mailto:896295@stud.unive.it}{\texttt{ 896295@stud.\+unive.\+it}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{basic_fun_8h_a5673a0da654a7b9e17876ac9ee518e1e}\label{basic_fun_8h_a5673a0da654a7b9e17876ac9ee518e1e} 
+\index{basicFun.h@{basicFun.h}!salva\_passo@{salva\_passo}}
+\index{salva\_passo@{salva\_passo}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{salva\_passo()}{salva\_passo()}}
+{\footnotesize\ttfamily void salva\+\_\+passo (\begin{DoxyParamCaption}\item[{char}]{dir }\end{DoxyParamCaption})}
+
+
+
+Funzione che salva il passo effettuato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Direzione del passo effetuato \\
+\hline
+\end{DoxyParams}
+\Hypertarget{basic_fun_8h_a41982125de145e96a02064efbead144c}\label{basic_fun_8h_a41982125de145e96a02064efbead144c} 
+\index{basicFun.h@{basicFun.h}!verifica\_cella@{verifica\_cella}}
+\index{verifica\_cella@{verifica\_cella}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{verifica\_cella()}{verifica\_cella()}}
+{\footnotesize\ttfamily bool verifica\+\_\+cella (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{char}]{dir }\end{DoxyParamCaption})}
+
+
+
+Funzione che verifica se è possibile effettuare la mossa desiderata e in caso positivo la fa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & Valore di dove la testa deve spostarsi verticalmente \\
+\hline
+{\em y0} & Valore di dove la testa deve spostarsi orizzontalmente \\
+\hline
+{\em dir} & Valore della direzione utilizzato per salvare le mosse effettuate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{basic_fun_8h_a29857d3a1052401cc1f2c7c80eed365f}\label{basic_fun_8h_a29857d3a1052401cc1f2c7c80eed365f} 
+\index{basicFun.h@{basicFun.h}!verifica\_cella\_a@{verifica\_cella\_a}}
+\index{verifica\_cella\_a@{verifica\_cella\_a}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{verifica\_cella\_a()}{verifica\_cella\_a()}}
+{\footnotesize\ttfamily bool verifica\+\_\+cella\+\_\+a (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{char}]{dir }\end{DoxyParamCaption})}
+
+
+
+Funzione che verifica se è possibile effettuare la mossa desiderata e in caso positivo la fa, modalità automatica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & Valore di dove la testa deve spostarsi verticalmente \\
+\hline
+{\em y0} & Valore di dove la testa deve spostarsi orizzontalmente \\
+\hline
+{\em dir} & Valore della direzione utilizzato per salvare le mosse effettuate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{basic_fun_8h_a4e1e0e72dd773439e333c84dd762a9c3}\label{basic_fun_8h_a4e1e0e72dd773439e333c84dd762a9c3} 
+\index{basicFun.h@{basicFun.h}!c@{c}}
+\index{c@{c}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c}
+
+Dimensione della mappa (colonne) \Hypertarget{basic_fun_8h_a22fe1178cb32536d40375b612ef208b4}\label{basic_fun_8h_a22fe1178cb32536d40375b612ef208b4} 
+\index{basicFun.h@{basicFun.h}!conta\_passi@{conta\_passi}}
+\index{conta\_passi@{conta\_passi}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{conta\_passi}{conta\_passi}}
+{\footnotesize\ttfamily int conta\+\_\+passi = 0}
+
+Numero di passi effettuati \Hypertarget{basic_fun_8h_a8827e73f540ce91e2fab5d1a7e4772f1}\label{basic_fun_8h_a8827e73f540ce91e2fab5d1a7e4772f1} 
+\index{basicFun.h@{basicFun.h}!lunghezza@{lunghezza}}
+\index{lunghezza@{lunghezza}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{lunghezza}{lunghezza}}
+{\footnotesize\ttfamily int lunghezza = 1}
+
+Lunghezza dello snake \Hypertarget{basic_fun_8h_a483f02126e42c02d07c9d3e182e6c1c4}\label{basic_fun_8h_a483f02126e42c02d07c9d3e182e6c1c4} 
+\index{basicFun.h@{basicFun.h}!mappa@{mappa}}
+\index{mappa@{mappa}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{mappa}{mappa}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} mappa\hspace{0.3cm}{\ttfamily [extern]}}
+
+Array dinamico contenente la mappa \Hypertarget{basic_fun_8h_a3ae710065269244fe448465525fd9c4d}\label{basic_fun_8h_a3ae710065269244fe448465525fd9c4d} 
+\index{basicFun.h@{basicFun.h}!punteggio@{punteggio}}
+\index{punteggio@{punteggio}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{punteggio}{punteggio}}
+{\footnotesize\ttfamily int punteggio = 1000}
+
+Punteggio totale \Hypertarget{basic_fun_8h_acab531abaa74a7e664e3986f2522b33a}\label{basic_fun_8h_acab531abaa74a7e664e3986f2522b33a} 
+\index{basicFun.h@{basicFun.h}!r@{r}}
+\index{r@{r}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int r}
+
+Dimensione della mappa (righe) \Hypertarget{basic_fun_8h_af3696e4fbbe2016b68cba2fca3fa84f0}\label{basic_fun_8h_af3696e4fbbe2016b68cba2fca3fa84f0} 
+\index{basicFun.h@{basicFun.h}!sequenza@{sequenza}}
+\index{sequenza@{sequenza}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{sequenza}{sequenza}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} sequenza}
+
+Array dinamico contenente la sequenza di mosse effettuate \Hypertarget{basic_fun_8h_a627f5fa9abe658322c368f91a2e4c9da}\label{basic_fun_8h_a627f5fa9abe658322c368f91a2e4c9da} 
+\index{basicFun.h@{basicFun.h}!trapani@{trapani}}
+\index{trapani@{trapani}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{trapani}{trapani}}
+{\footnotesize\ttfamily int trapani = 0}
+
+Numero di trapani \Hypertarget{basic_fun_8h_a6150e0515f7202e2fb518f7206ed97dc}\label{basic_fun_8h_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{basicFun.h@{basicFun.h}!x@{x}}
+\index{x@{x}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x}
+
+Coordinata x della testa \Hypertarget{basic_fun_8h_a0a2f84ed7838f07779ae24c5a9086d33}\label{basic_fun_8h_a0a2f84ed7838f07779ae24c5a9086d33} 
+\index{basicFun.h@{basicFun.h}!y@{y}}
+\index{y@{y}!basicFun.h@{basicFun.h}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int y}
+
+Coordinata y della testa 

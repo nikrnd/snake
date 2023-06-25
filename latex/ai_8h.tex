@@ -1,0 +1,93 @@
+\doxysection{code/ai.h File Reference}
+\hypertarget{ai_8h}{}\label{ai_8h}\index{code/ai.h@{code/ai.h}}
+
+
+File che gestisce la risoluzione automatica.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ai_8h_a62249e384b997229a3e2ae74ade334e2}\label{ai_8h_a62249e384b997229a3e2ae74ade334e2} 
+\#define {\bfseries DELAY}~100
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ai_8h_aa083e2cacfe79097b4f83aa27f94587f}\label{ai_8h_aa083e2cacfe79097b4f83aa27f94587f} 
+void {\bfseries last\+\_\+move} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che trova l\textquotesingle{}uscita. \end{DoxyCompactList}\item 
+\Hypertarget{ai_8h_a3c00e0409fc4386a648f42f8b1dd250a}\label{ai_8h_a3c00e0409fc4386a648f42f8b1dd250a} 
+void {\bfseries first\+\_\+move} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che fa la prima mossa. \end{DoxyCompactList}\item 
+\Hypertarget{ai_8h_ad2efc27147eb2fcc83b331d929ea3072}\label{ai_8h_ad2efc27147eb2fcc83b331d929ea3072} 
+void {\bfseries mid\+\_\+moves} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che risolve le mosse intermedie. \end{DoxyCompactList}\item 
+\Hypertarget{ai_8h_a4733a0ba3f6ebc1123a0e76101752d64}\label{ai_8h_a4733a0ba3f6ebc1123a0e76101752d64} 
+void {\bfseries auto\+\_\+solve} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che risolve il labirinto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ai_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}
+\item 
+int \mbox{\hyperlink{ai_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}
+\item 
+int \mbox{\hyperlink{ai_8h_a0a2f84ed7838f07779ae24c5a9086d33}{y}}
+\item 
+int \mbox{\hyperlink{ai_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}}
+\item 
+int \mbox{\hyperlink{ai_8h_acab531abaa74a7e664e3986f2522b33a}{r}}
+\item 
+\Hypertarget{ai_8h_af3696e4fbbe2016b68cba2fca3fa84f0}\label{ai_8h_af3696e4fbbe2016b68cba2fca3fa84f0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries sequenza}
+\item 
+\Hypertarget{ai_8h_a22fe1178cb32536d40375b612ef208b4}\label{ai_8h_a22fe1178cb32536d40375b612ef208b4} 
+int {\bfseries conta\+\_\+passi}
+\item 
+\Hypertarget{ai_8h_a41069955315a21bdad9aeada75d27bb7}\label{ai_8h_a41069955315a21bdad9aeada75d27bb7} 
+int {\bfseries n\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File che gestisce la risoluzione automatica. 
+
+\begin{DoxyAuthor}{Author}
+Delton Nicolas \href{mailto:896295@stud.unive.it}{\texttt{ 896295@stud.\+unive.\+it}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ai_8h_a4e1e0e72dd773439e333c84dd762a9c3}\label{ai_8h_a4e1e0e72dd773439e333c84dd762a9c3} 
+\index{ai.h@{ai.h}!c@{c}}
+\index{c@{c}!ai.h@{ai.h}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c\hspace{0.3cm}{\ttfamily [extern]}}
+
+Dimensione della mappa (colonne) \Hypertarget{ai_8h_a483f02126e42c02d07c9d3e182e6c1c4}\label{ai_8h_a483f02126e42c02d07c9d3e182e6c1c4} 
+\index{ai.h@{ai.h}!mappa@{mappa}}
+\index{mappa@{mappa}!ai.h@{ai.h}}
+\doxysubsubsection{\texorpdfstring{mappa}{mappa}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} mappa\hspace{0.3cm}{\ttfamily [extern]}}
+
+Array dinamico contenente la mappa \Hypertarget{ai_8h_acab531abaa74a7e664e3986f2522b33a}\label{ai_8h_acab531abaa74a7e664e3986f2522b33a} 
+\index{ai.h@{ai.h}!r@{r}}
+\index{r@{r}!ai.h@{ai.h}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int r\hspace{0.3cm}{\ttfamily [extern]}}
+
+Dimensione della mappa (righe) \Hypertarget{ai_8h_a6150e0515f7202e2fb518f7206ed97dc}\label{ai_8h_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{ai.h@{ai.h}!x@{x}}
+\index{x@{x}!ai.h@{ai.h}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x\hspace{0.3cm}{\ttfamily [extern]}}
+
+Coordinata x della testa \Hypertarget{ai_8h_a0a2f84ed7838f07779ae24c5a9086d33}\label{ai_8h_a0a2f84ed7838f07779ae24c5a9086d33} 
+\index{ai.h@{ai.h}!y@{y}}
+\index{y@{y}!ai.h@{ai.h}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int y\hspace{0.3cm}{\ttfamily [extern]}}
+
+Coordinata y della testa 

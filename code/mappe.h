@@ -1,3 +1,9 @@
+/**
+ @file
+ @brief Mappe de default
+ @author Delton Nicolas <896295@stud.unive.it>
+ */
+
 #include <time.h>
 
 extern char** mappa;

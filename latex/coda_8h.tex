@@ -1,0 +1,98 @@
+\doxysection{code/coda.h File Reference}
+\hypertarget{coda_8h}{}\label{coda_8h}\index{code/coda.h@{code/coda.h}}
+
+
+File che gestisce la coda.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{coda_8h_a384cdf16fa51792f1624d23f2ec935f4}\label{coda_8h_a384cdf16fa51792f1624d23f2ec935f4} 
+char {\bfseries last} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che restituisce l\textquotesingle{}ultima mossa. \end{DoxyCompactList}\item 
+\Hypertarget{coda_8h_a6205948a51c1192686065ad3e5f3a246}\label{coda_8h_a6205948a51c1192686065ad3e5f3a246} 
+void {\bfseries aggiorna\+\_\+coda} (void)
+\begin{DoxyCompactList}\small\item\em Funzione che aggiorna la coda sulla mappa. \end{DoxyCompactList}\item 
+\Hypertarget{coda_8h_a669679299ff135018581eede5f6f8e9a}\label{coda_8h_a669679299ff135018581eede5f6f8e9a} 
+int {\bfseries verifica\+\_\+morso} ()
+\begin{DoxyCompactList}\small\item\em Funzione che controlla dove è stato morso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{coda_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}
+\item 
+int \mbox{\hyperlink{coda_8h_a8827e73f540ce91e2fab5d1a7e4772f1}{lunghezza}}
+\item 
+int \mbox{\hyperlink{coda_8h_a22fe1178cb32536d40375b612ef208b4}{conta\+\_\+passi}}
+\item 
+int \mbox{\hyperlink{coda_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}
+\item 
+int \mbox{\hyperlink{coda_8h_a0a2f84ed7838f07779ae24c5a9086d33}{y}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{coda_8h_af3696e4fbbe2016b68cba2fca3fa84f0}{sequenza}}
+\item 
+int \mbox{\hyperlink{coda_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}}
+\item 
+int \mbox{\hyperlink{coda_8h_acab531abaa74a7e664e3986f2522b33a}{r}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File che gestisce la coda. 
+
+\begin{DoxyAuthor}{Author}
+Delton Nicolas \href{mailto:896295@stud.unive.it}{\texttt{ 896295@stud.\+unive.\+it}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{coda_8h_a4e1e0e72dd773439e333c84dd762a9c3}\label{coda_8h_a4e1e0e72dd773439e333c84dd762a9c3} 
+\index{coda.h@{coda.h}!c@{c}}
+\index{c@{c}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c\hspace{0.3cm}{\ttfamily [extern]}}
+
+Dimensione della mappa (colonne) \Hypertarget{coda_8h_a22fe1178cb32536d40375b612ef208b4}\label{coda_8h_a22fe1178cb32536d40375b612ef208b4} 
+\index{coda.h@{coda.h}!conta\_passi@{conta\_passi}}
+\index{conta\_passi@{conta\_passi}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{conta\_passi}{conta\_passi}}
+{\footnotesize\ttfamily int conta\+\_\+passi\hspace{0.3cm}{\ttfamily [extern]}}
+
+Numero di passi effettuati \Hypertarget{coda_8h_a8827e73f540ce91e2fab5d1a7e4772f1}\label{coda_8h_a8827e73f540ce91e2fab5d1a7e4772f1} 
+\index{coda.h@{coda.h}!lunghezza@{lunghezza}}
+\index{lunghezza@{lunghezza}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{lunghezza}{lunghezza}}
+{\footnotesize\ttfamily int lunghezza\hspace{0.3cm}{\ttfamily [extern]}}
+
+Lunghezza dello snake \Hypertarget{coda_8h_a483f02126e42c02d07c9d3e182e6c1c4}\label{coda_8h_a483f02126e42c02d07c9d3e182e6c1c4} 
+\index{coda.h@{coda.h}!mappa@{mappa}}
+\index{mappa@{mappa}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{mappa}{mappa}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} mappa\hspace{0.3cm}{\ttfamily [extern]}}
+
+Array dinamico contenente la mappa \Hypertarget{coda_8h_acab531abaa74a7e664e3986f2522b33a}\label{coda_8h_acab531abaa74a7e664e3986f2522b33a} 
+\index{coda.h@{coda.h}!r@{r}}
+\index{r@{r}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int r\hspace{0.3cm}{\ttfamily [extern]}}
+
+Dimensione della mappa (righe) \Hypertarget{coda_8h_af3696e4fbbe2016b68cba2fca3fa84f0}\label{coda_8h_af3696e4fbbe2016b68cba2fca3fa84f0} 
+\index{coda.h@{coda.h}!sequenza@{sequenza}}
+\index{sequenza@{sequenza}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{sequenza}{sequenza}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} sequenza\hspace{0.3cm}{\ttfamily [extern]}}
+
+Array dinamico contenente la sequenza di mosse effettuate \Hypertarget{coda_8h_a6150e0515f7202e2fb518f7206ed97dc}\label{coda_8h_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{coda.h@{coda.h}!x@{x}}
+\index{x@{x}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x\hspace{0.3cm}{\ttfamily [extern]}}
+
+Coordinata x della testa \Hypertarget{coda_8h_a0a2f84ed7838f07779ae24c5a9086d33}\label{coda_8h_a0a2f84ed7838f07779ae24c5a9086d33} 
+\index{coda.h@{coda.h}!y@{y}}
+\index{y@{y}!coda.h@{coda.h}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int y\hspace{0.3cm}{\ttfamily [extern]}}
+
+Coordinata y della testa 

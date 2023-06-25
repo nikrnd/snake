@@ -1,9 +1,18 @@
+/**
+ @file
+ @brief File che gestisce la lettura della mappa da file
+ @author Delton Nicolas <896295@stud.unive.it>
+ */
+
 extern char** mappa;
 extern int c;
 extern int r;
 extern int x;
 extern int y;
 
+/**
+ @brief Funzione che salva il numero di righe e colonne della mappa inserita nel file
+ */
 void getNumColsAndRows(void){
     FILE *f = fopen("mapInput.txt", "r");
 	if(f == NULL)
@@ -31,6 +40,9 @@ void getNumColsAndRows(void){
     r = righe;
 }
 
+/**
+ @brief Funzione che legge la mappa dal file
+ */
 void readFromFile(void){
 
     FILE* ptr;

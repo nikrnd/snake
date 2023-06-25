@@ -1,3 +1,9 @@
+/**
+ @file
+ @brief File che gestisce la risoluzione automatica
+ @author Delton Nicolas <896295@stud.unive.it>
+ */
+
 #include <unistd.h>
 #define DELAY 100
 
@@ -12,6 +18,9 @@ extern int n_map;
 
 void last_move(void);
 
+/**
+ @brief Funzione che fa la prima mossa
+ */
 void first_move(void){
     if (y == 0) {
         verifica_cella_a(0, 1, 'E');
@@ -29,6 +38,9 @@ void first_move(void){
     //stampa_mappa();
 }
 
+/**
+ @brief Funzione che risolve le mosse intermedie
+ */
 void mid_moves(void) {
     int r;
     int try_count = 0, x_prec = x, y_prec = y;
@@ -64,6 +76,9 @@ void mid_moves(void) {
         //usleep(DELAY);
 }
 
+/**
+ @brief Funzione che trova l'uscita
+ */
 void last_move(void){
     if (x+1 < r && mappa[x+1][y] == '_') verifica_cella_a(-1, 0, 'N');
     else if (x-1 >= 0 && mappa[x-1][y]== '_') verifica_cella_a(1, 0, 'S');
@@ -71,6 +86,9 @@ void last_move(void){
     else if (y-1 >= 0 && mappa[x][y-1] == '_') verifica_cella_a(0, -1, 'O');
 }
 
+/**
+ @brief Funzione che risolve il labirinto
+ */
 void auto_solve(void){
 
     //usleep(DELAY);

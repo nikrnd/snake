@@ -1,0 +1,105 @@
+\doxysection{read\+\_\+map\+\_\+from\+\_\+file.\+h}
+\hypertarget{read__map__from__file_8h_source}{}\label{read__map__from__file_8h_source}\index{code/read\_map\_from\_file.h@{code/read\_map\_from\_file.h}}
+\mbox{\hyperlink{read__map__from__file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}**\ \mbox{\hyperlink{read__map__from__file_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map__from__file_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map__from__file_8h_acab531abaa74a7e664e3986f2522b33a}{r}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map__from__file_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map__from__file_8h_a0a2f84ed7838f07779ae24c5a9086d33}{y}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{read__map__from__file_8h_aa5f50e3c057b325b39589d3b529b5e89}{getNumColsAndRows}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{00017\ \ \ \ \ FILE\ *f\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}(f\ ==\ NULL)}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Errore"{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{char}\ **matrice,\ buffer[100];}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ righe\ =\ 0,\ colonne\ =\ 0,\ i\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}(!feof(f))}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ fgets(buffer,\ 100,\ f);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ righe++;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{while}(buffer[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'})}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(buffer[i]\ !=\ \textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ colonne++;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ fclose(f);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}}\ =\ colonne+1;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_acab531abaa74a7e664e3986f2522b33a}{r}}\ =\ righe;}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{read__map__from__file_8h_a49f046d8c4595b3764d59c52ca118ec6}{readFromFile}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ FILE*\ ptr;}
+\DoxyCodeLine{00049\ \ \ \ \ ptr\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00050\ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ err\_counter\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (ptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ err\_counter\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ FILE*\ \textcolor{keyword}{new}\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ fclose(\textcolor{keyword}{new});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ FILE*\ ptr\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ fseek\ (ptr,\ 0,\ SEEK\_END);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (0\ ==\ ftell(ptr))\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ err\_counter++;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Errore\ numero\ \%d:\ File\ appena\ creato,\ inserisci\ la\ mappa\ e\ premi\ qualunque\ tasto\(\backslash\)n"{}},\ err\_counter);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \_getch();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ FILE*\ ptr\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ fseek\ (ptr,\ 0,\ SEEK\_END);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a49f046d8c4595b3764d59c52ca118ec6}{readFromFile}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ptr\ !=\ NULL)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ err\_counter\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ FILE*\ ptr\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ fseek\ (ptr,\ 0,\ SEEK\_END);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (0\ ==\ ftell(ptr))\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ err\_counter++;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Errore\ numero\ \%d:\ File\ appena\ creato,\ inserisci\ la\ mappa\ e\ premi\ qualunque\ tasto\(\backslash\)n"{}},\ err\_counter);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \_getch();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ FILE*\ ptr\ =\ fopen(\textcolor{stringliteral}{"{}mapInput.txt"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ fseek\ (ptr,\ 0,\ SEEK\_END);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_aa5f50e3c057b325b39589d3b529b5e89}{getNumColsAndRows}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//creazione\ mappa}}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}\ =\ (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)\ *\ \mbox{\hyperlink{read__map__from__file_8h_acab531abaa74a7e664e3986f2522b33a}{r}});}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{read__map__from__file_8h_acab531abaa74a7e664e3986f2522b33a}{r}};\ i++)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}[i]\ =\ (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ \mbox{\hyperlink{read__map__from__file_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}});}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{char}\ ch;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{read__map__from__file_8h_acab531abaa74a7e664e3986f2522b33a}{r}};\ i++)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{read__map__from__file_8h_a4e1e0e72dd773439e333c84dd762a9c3}{c}};\ j++)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ ch\ =\ fgetc(ptr);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{int})ch\ !=\ 10\ \&\&\ (\textcolor{keywordtype}{int})ch\ !=\ -\/1)\ \mbox{\hyperlink{read__map__from__file_8h_a483f02126e42c02d07c9d3e182e6c1c4}{mappa}}[i][j]\ =\ ch;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ch\ ==\ \textcolor{charliteral}{'o'})\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a6150e0515f7202e2fb518f7206ed97dc}{x}}\ =\ i;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map__from__file_8h_a0a2f84ed7838f07779ae24c5a9086d33}{y}}\ =\ j;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{basic_fun_8h_a8a54f1a452532f4c0420c8b2b4bcfa23}{stampa\_mappa}}();}
+\DoxyCodeLine{00108\ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ fclose(ptr);}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}

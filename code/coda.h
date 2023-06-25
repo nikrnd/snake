@@ -1,3 +1,9 @@
+/**
+ @file
+ @brief File che gestisce la coda
+ @author Delton Nicolas <896295@stud.unive.it>
+ */
+
 extern char** mappa; //mappa
 extern int lunghezza; //lunghezza coda
 
@@ -11,10 +17,16 @@ extern char* sequenza;
 extern int c;
 extern int r;
 
+/**
+ @brief Funzione che restituisce l'ultima mossa
+ */
 char last(void){
     return sequenza[(sizeof(*sequenza)/sizeof(char))-1];
 }
 
+/**
+ @brief Funzione che aggiorna la coda sulla mappa
+ */
 void aggiorna_coda(void){
     if (lunghezza == 1) return;
     int tx = x, ty = y;
@@ -61,6 +73,9 @@ void aggiorna_coda(void){
     }
 }
 
+/**
+ @brief Funzione che controlla dove è stato morso
+ */
 int verifica_morso(){
     int tx = x, ty = y;
     int conta_coda = 0;
