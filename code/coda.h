@@ -11,6 +11,9 @@ extern char* sequenza;
 extern int c;
 extern int r;
 
+char last(void){
+    return sequenza[(sizeof(*sequenza)/sizeof(char))-1];
+}
 
 void aggiorna_coda(void){
     int tx = x, ty = y;
